@@ -1,0 +1,14 @@
+{
+  "name": "hello",
+  "version": "1.0.0",
+  "description": "study",
+  "main": "index.html",
+  "scripts": {
+    "serve": "node-sass -w style.scss -o ./ --source-map=true & live-server --ignore=*.map"
+  },
+  "keywords": [
+    "study"
+  ],
+  "author": "AHN HO JUNG",
+  "license": "MIT"
+}

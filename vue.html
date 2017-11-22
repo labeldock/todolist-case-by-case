@@ -1,0 +1,52 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Todo list</title>
+  <link rel="stylesheet" type="text/css" href="style.css"></link>
+  <script src="/libs/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>TODO</h1>
+    <section class="todo-wrapper">
+      <header>
+        <h2>Today</h2>
+        <a>...</a>
+      </header>
+      <div class="content">
+        <ul>
+         <li v-for="(item, index) in todolist">
+           <span class="icon"></span>
+           <span class="text">{{item.text}}</span>
+           <div class="controls">
+             <a class="remove-action" @click="remove(index)">&times;</a>
+           </div>
+         </li>
+        </ul>
+      </div>
+      <footer>
+        <input v-model="textValue" type="text" placeholder="입력해주세요">
+        <a @click="add()">Add</a>
+      </footer>
+    </section>
+  </div>
+  
+  <script>
+      new Vue({
+          el:"#app",
+          data:{
+              todolist:[],
+              textValue:"Hello vue"
+          },
+          methods:{
+              add:function(){
+                  this.todolist.push({text:this.textValue});
+              },
+              remove:function(index){
+                  this.todolist.splice(index,1);
+              }
+          }
+      });
+  </script>
+</body>
+</html>
